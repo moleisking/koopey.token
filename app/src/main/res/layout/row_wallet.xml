@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layWallet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/list_vertical_margin"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgQRCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@color/color_background_light"
+        android:clickable="false"
+        android:contentDescription="@string/label_description"
+        android:focusable="false"
+        android:scaleType="centerCrop"
+        android:scrollbars="none"
+        android:src="@drawable/default_user"
+        android:layout_weight=".50"></ImageView>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/label_horizontal_margin"
+            android:gravity="left"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:hint="@string/label_value"
+            android:text="0.0"
+            android:textSize="@dimen/font_super_size"
+            android:layout_weight=".50"></TextView>
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:hint="@string/label_currency"
+            android:textAllCaps="true"
+            android:text=""
+            android:textSize="@dimen/font_super_size"
+            android:layout_weight=".50"></TextView>
+    </LinearLayout>
+
+</LinearLayout>

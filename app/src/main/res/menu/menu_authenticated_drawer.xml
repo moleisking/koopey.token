@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="@string/label_dashboard" />
+        <!--item
+            android:id="@+id/nav_my_user"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="@string/label_my_user" /-->
+        <item
+            android:id="@+id/nav_my_assets"
+            android:icon="@drawable/ic_add_to_photos_black_24dp"
+            android:title="@string/label_my_assets" />
+        <!--item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="@string/label_search" /-->
+        <item
+            android:id="@+id/nav_results"
+            android:icon="@drawable/ic_view_list_black_24dp"
+            android:title="@string/label_results" />
+        <item
+            android:id="@+id/nav_conversations"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="@string/label_conversations" />
+
+    </group>
+    <item android:title="@string/label_transactions">
+
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_date_range_black_24dp"
+            android:title="@string/label_calendar" />
+        <item
+            android:id="@+id/nav_transactions"
+            android:icon="@drawable/ic_payment_black_24dp"
+            android:title="@string/label_transactions" />
+        <item
+            android:id="@+id/nav_wallets"
+            android:icon="@drawable/ic_payment_black_24dp"
+            android:title="@string/label_wallets" />
+    </item>
+    <item android:title="@string/label_search">
+        <menu>
+            <item
+                android:id="@+id/nav_user_name_search"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="@string/label_user_name_search" />
+            <item
+                android:id="@+id/nav_service_search"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="@string/label_service_search" />
+            <item
+                android:id="@+id/nav_product_search"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="@string/label_product_search" />
+            <item
+                android:id="@+id/nav_transaction_search"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="@string/label_transaction_search" />
+        </menu>
+    </item>
+
+    <item android:title="@string/label_communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_message"
+                android:icon="@drawable/ic_email_black_24dp"
+                android:title="@string/label_message" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/button_share" />
+        </menu>
+    </item>
+    <item android:title="@string/label_settings">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="@string/label_settings" />
+            <item
+                android:id="@+id/nav_images"
+                android:icon="@drawable/ic_insert_photo_black_24dp"
+                android:title="@string/label_images" />
+            <item
+                android:id="@+id/nav_user_map"
+                android:icon="@drawable/ic_layers_black_24dp"
+                android:title="@string/label_users" />
+            <item
+                android:id="@+id/nav_asset_map"
+                android:icon="@drawable/ic_layers_black_24dp"
+                android:title="@string/label_assets" />
+        </menu>
+    </item>
+</menu>

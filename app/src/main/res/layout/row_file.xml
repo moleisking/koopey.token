@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rowFile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/label_id"
+            android:singleLine="true"
+            android:text=""></EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/label_name"
+            android:singleLine="true"
+            android:text=""></EditText>
+    </android.support.design.widget.TextInputLayout>
+
+    <!--android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/label_type"
+            android:singleLine="true"
+            android:text=""></EditText>
+    </android.support.design.widget.TextInputLayout-->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/label_size"
+            android:singleLine="true"
+            android:text=""></EditText>
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

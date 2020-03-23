@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rowConversation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rowHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/row_vertical_margin"
+        android:layout_marginBottom="@dimen/row_vertical_margin"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="@dimen/image_small_size"
+            android:layout_height="@dimen/image_small_size"
+            android:maxHeight="@dimen/image_small_size"
+            android:maxWidth="@dimen/image_small_size"
+            android:paddingLeft="@dimen/row_horizontal_margin"
+            android:scaleType="fitCenter"
+            android:scrollbars="none"></ImageView>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rowItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/font_header_size">
+
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/txtAlias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="MyName"
+                android:textSize="@dimen/font_header_size"
+                android:textStyle="bold"></TextView>
+
+
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/txtSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="Summery"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_dashboard"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:layout_marginBottom="@dimen/fragment_vertical_margin"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/btnTrack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/switch_horizontal_margin"
+                android:layout_marginRight="@dimen/switch_horizontal_margin"
+
+                android:text="@string/label_track"
+                android:textSize="@dimen/font_content_size" />
+
+            <Switch
+                android:id="@+id/btnAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/switch_horizontal_margin"
+                android:layout_marginStart="@dimen/switch_horizontal_margin"
+                android:text="@string/label_available"
+                android:textSize="@dimen/font_content_size" />
+
+            <LinearLayout
+                android:id="@+id/layMessages"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/label_vertical_margin"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layUnread"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginEnd="@dimen/label_horizontal_margin"
+                    android:layout_marginStart="@dimen/label_horizontal_margin"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgUnread"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/label_horizontal_margin"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:src="@drawable/ic_email_black_24dp"></ImageView>
+
+                    <TextView
+                        android:id="@+id/txtUnread"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/label_horizontal_margin"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="0"
+                        android:textSize="@dimen/font_content_size"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layUnsent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/label_horizontal_margin"
+                    android:layout_marginStart="@dimen/label_horizontal_margin"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgUnsent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/label_horizontal_margin"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:src="@drawable/ic_sync_black_24dp"></ImageView>
+                    <TextView
+                        android:id="@+id/txtUnsent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/label_horizontal_margin"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="0"
+                        android:textSize="@dimen/font_content_size"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layReviews"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/label_vertical_margin"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layPositiveNegative"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginEnd="@dimen/label_horizontal_margin"
+                    android:layout_marginStart="@dimen/label_horizontal_margin"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/layPositive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/label_horizontal_margin"
+                        android:layout_marginStart="@dimen/label_horizontal_margin"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPositive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/label_horizontal_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:src="@drawable/ic_thumb_up_black_24dp"></ImageView>
+
+
+                        <TextView
+                            android:id="@+id/txtPositive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/label_horizontal_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="@string/label_null"
+                            android:textSize="@dimen/font_content_size"></TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layNegative"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/label_horizontal_margin"
+                        android:layout_marginStart="@dimen/label_horizontal_margin"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgNegative"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/label_horizontal_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:src="@drawable/ic_thumb_down_black_24dp"></ImageView>
+
+                        <TextView
+                            android:id="@+id/txtNegative"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/label_horizontal_margin"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="@string/label_null"
+                            android:textSize="@dimen/font_content_size"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RatingBar
+                    android:id="@+id/starAverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:max="5"
+                    android:numStars="5"></RatingBar>
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_wallets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layoutDirection="inherit">
+
+                <fragment
+                    android:id="@+id/frgWallets"
+                    android:name="com.koopey.view.WalletListFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:showImages="false"
+                    app:showScrollbars="false"
+                    app:showValues="true" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

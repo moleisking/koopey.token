@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_image_dialog"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:contentDescription="@string/label_image"
+        android:scaleType="centerCrop"
+        android:scrollbars="none"
+        android:src="@drawable/ic_insert_photo_black_24dp"
+        android:tag="image"></ImageView>
+
+    <Switch
+        android:id="@+id/btnPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_avatar" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnCreateFromGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_gallery"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_collections_black_24dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnCreateFromCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_camera_upload"
+        android:layout_marginBottom="@dimen/button_vertical_margin"
+        android:layout_marginRight="@dimen/label_horizontal_margin"
+        android:src="@drawable/ic_menu_camera"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CROP"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_crop_black_24dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_create"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_add_black_24dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_mode_edit_black_24dp"
+            android:text="@string/label_update" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/label_delete"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_delete_black_24dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/label_cancel"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_cancel_black_24dp"/>
+    </LinearLayout>
+</LinearLayout>

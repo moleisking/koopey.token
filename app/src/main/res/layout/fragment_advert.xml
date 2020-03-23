@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutAdvert"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/advert_vertical_margin"
+    android:paddingBottom="@dimen/advert_vertical_margin">
+
+    <RadioGroup
+        android:id="@+id/optsPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/optNone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_none" />
+
+        <RadioButton
+            android:id="@+id/optDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_day" />
+
+        <RadioButton
+            android:id="@+id/optWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_week" />
+
+        <RadioButton
+            android:id="@+id/optMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_month" />
+
+        <Space
+            android:layout_width="@dimen/advert_horizontal_margin"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/txtValue"
+            android:textSize="@dimen/font_super_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:enabled="false"/>
+
+        <TextView
+            android:textSize="@dimen/font_super_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_font_content"
+            android:text=" TOK"
+            android:enabled="false"/>
+    </RadioGroup>
+
+</LinearLayout>

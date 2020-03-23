@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_tag_create"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/txtWord"
+                android:text="Add word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="add a new search tag"
+                android:maxLines="1"
+                android:singleLine="true">
+                <requestFocus />
+            </EditText>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_search_black_24dp"
+                android:layout_gravity="bottom|end">
+            </android.support.design.widget.FloatingActionButton>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

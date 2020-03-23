@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="default_radius">10</integer>
+    <integer name="product_search_min">0</integer>
+    <integer name="product_search_max">5000</integer>
+    <integer name="user_search_min">0</integer>
+    <integer name="user_search_max">5000</integer>
+    <integer name="google_play_services_version">11910000</integer>
+    <integer name="advert_day_value">-500</integer>
+    <integer name="advert_week_value">-1000</integer>
+    <integer name="advert_month_value">-2000</integer>
+</resources>

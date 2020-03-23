@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Notifications"
+        android:key="preference_group_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <CheckBoxPreference
+            android:key="preference_notification_email"
+            android:title="Email Notifications"
+            android:summary="Disable or enable email notifications."
+            android:defaultValue="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <CheckBoxPreference
+            android:key="preference_notification_screen"
+            android:title="Screen Notifications"
+            android:summary="Disable or enable screen notifications."
+            android:defaultValue="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Defaults"
+        android:key="preference_group_defaults"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <CheckBoxPreference
+            android:key="preference_default_distance_unit"
+            android:title="Kilometers or Miles"
+            android:summary="For kilometers set to. For miles set to false."
+            android:defaultValue="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <CheckBoxPreference
+            android:key="preference_default_currency"
+            android:title="Kilometers or Miles"
+            android:summary="For kilometers set to. For miles set to false."
+            android:defaultValue="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Account"
+        android:key="preference_group_account"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <Preference
+            android:key="preference_my_user_delete"
+            android:title="Delete locally stored user account"
+            android:summary="Deletes stored account data. Next time user will require login." />
+        <EditTextPreference
+            android:key="preference_my_user_password_change"
+            android:title="Change password"
+            android:summary="Change forgotten password via email." />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Synchronize"
+        android:key="preference_group_synchronize"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <Preference
+            android:key="preference_refresh_my_user"
+            android:title="Refresh locally stored user account"
+            android:summary="Refreshes stored account data. Next time user will not require login." />
+        <Preference
+            android:key="preference_refresh_my_products"
+            android:title="Refresh locally stored user products"
+            android:summary="Refreshes stored user product data." />
+        <Preference
+            android:key="preference_refresh_my_transactions"
+            android:title="Refresh locally stored user transactions"
+            android:summary="Refreshes stored user transaction data." />
+        <Preference
+            android:key="preference_refresh_location"
+            android:title="Set the current location"
+            android:summary="Refreshes stored current location." />
+        <Preference
+            android:key="preference_refresh_tags"
+            android:title="Refresh tags"
+            android:summary="Refresh tags" />
+        <Preference
+            android:key="preference_refresh_messages"
+            android:title="Refresh messages"
+            android:summary="Refresh messages" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Troubleshoot"
+        android:key="pref_group_about"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <Preference
+            android:key="preference_exit"
+            android:title="Exit application"
+            android:summary="End application process and threads" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="About"
+        android:key="pref_group_about"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <Preference
+            android:key="preference_build_version"
+            android:title="Build version"
+            android:summary="" />
+        <Preference
+            android:key="preference_privacy_policy_and_data_protection"
+            android:title="Privacy policy and data protection"
+            android:summary="" />
+        <Preference
+            android:key="preference_terms_and_conditions"
+            android:title="Terms and conditions"
+            android:summary="" />
+        <Preference
+            android:key="preference_about_us"
+            android:title="About us"
+            android:summary="" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
+
+<!--LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/minitrabajo_activity_setting"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/lblNotifications"
+        android:text="Notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search tags"
+        android:maxLines="1"
+        android:singleLine="true">
+        <requestFocus />
+    </TextView>
+
+
+
+    <RadioGroup
+        android:id="@+id/radDefaultNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="onDefaultResultClick">
+        <RadioButton
+            android:id="@+id/radNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:onClick="onNotificationClick"/>
+        <RadioButton
+            android:id="@+id/radEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/radNone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="None"
+            android:checked="true"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/lblSearch"
+        android:text="Default Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search tags"
+        android:maxLines="1"
+        android:singleLine="true">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/radDefaultSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="onDefaultResultClick">
+        <RadioButton
+            android:id="@+id/radMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map"/>
+
+        <RadioButton
+            android:id="@+id/radList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List"
+            android:checked="true"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lblAccount"
+        android:text="Account Reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search tags"
+        android:maxLines="1"
+        android:singleLine="true">
+        <requestFocus />
+    </TextView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnResetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_settings_backup_restore_black_24dp"
+        android:onClick="onResetPasswordClick">
+    </android.support.design.widget.FloatingActionButton>
+
+
+    <TextView
+        android:id="@+id/lblSupport"
+        android:text="Contact Us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search tags"
+        android:maxLines="1"
+        android:singleLine="true">
+        <requestFocus />
+    </TextView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnContactUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_email_black_24dp"
+        android:onClick="onContactUsClick">
+    </android.support.design.widget.FloatingActionButton>
+
+    <TextView
+        android:id="@+id/lblSave"
+        android:text="Save Settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Save settings"
+        android:maxLines="1"
+        android:singleLine="true">
+        <requestFocus />
+    </TextView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_save_black_24dp"
+        android:onClick="onSaveClick">
+    </android.support.design.widget.FloatingActionButton>
+
+
+</LinearLayout-->

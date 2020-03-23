@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_user"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/layoutUserRead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/fragment_bottom_margin">
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@color/color_background_light"
+                android:clickable="false"
+                android:contentDescription="@string/label_description"
+                android:focusable="false"
+                android:scaleType="centerCrop"
+                android:scrollbars="none"
+                android:src="@drawable/default_user"></ImageView>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/label_vertical_margin">
+
+                <TextView
+                    android:id="@+id/txtAlias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="left"
+                    android:inputType="textCapSentences"
+                    android:paddingBottom="@dimen/text_vertical_margin"
+                    android:paddingLeft="@dimen/text_horizontal_margin"
+                    android:text="@string/label_alias"
+                    android:textSize="@dimen/font_content_size"
+                    android:theme="@style/AppTheme.FormContent"></TextView>
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="left"
+                    android:inputType="textCapSentences"
+                    android:paddingBottom="@dimen/text_vertical_margin"
+                    android:paddingLeft="@dimen/text_horizontal_margin"
+                    android:text="@string/label_name"
+                    android:textSize="@dimen/font_content_size"
+                    android:theme="@style/AppTheme.FormContent"></TextView>
+
+
+                <TextView
+                    android:id="@+id/txtDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:drawableRight="@drawable/ic_place_black_24dp"
+                    android:focusable="false"
+                    android:gravity="end"
+                    android:paddingBottom="@dimen/text_vertical_margin"
+                    android:paddingRight="@dimen/text_horizontal_margin"
+                    android:text="@string/label_distance"
+                    android:textSize="@dimen/font_content_size"></TextView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+
+            <TextView
+                android:id="@+id/lblDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:paddingLeft="@dimen/label_horizontal_margin"
+                android:paddingTop="@dimen/label_vertical_margin"
+                android:text="@string/label_description"
+                android:textSize="@dimen/font_content_size"
+                android:theme="@style/AppTheme.FormHeader"></TextView>
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:paddingBottom="@dimen/text_vertical_margin"
+                android:paddingLeft="@dimen/text_horizontal_margin"
+                android:text="@string/label_description"
+                android:textSize="@dimen/font_content_size"></TextView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+
+
+            <TextView
+                android:id="@+id/lblEducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:paddingLeft="@dimen/label_horizontal_margin"
+                android:paddingTop="@dimen/label_vertical_margin"
+                android:text="@string/label_education"
+                android:textSize="@dimen/font_content_size"
+                android:theme="@style/AppTheme.FormHeader"></TextView>
+
+            <TextView
+                android:id="@+id/txtEducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:paddingBottom="@dimen/text_vertical_margin"
+                android:paddingLeft="@dimen/text_horizontal_margin"
+                android:text="@string/label_education"
+                android:textSize="@dimen/font_content_size"></TextView>
+
+            <!--Transactions-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Buttons-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_email_black_24dp"
+            android:visibility="visible"></android.support.design.widget.FloatingActionButton>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_mode_edit_black_24dp"
+            android:visibility="gone"></android.support.design.widget.FloatingActionButton>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:visibility="gone"></android.support.design.widget.FloatingActionButton>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

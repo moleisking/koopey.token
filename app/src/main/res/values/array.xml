@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="period_codes">
+        <!--item >never</item-->
+        <item>once</item>
+        <item>hour</item>
+        <item>day</item>
+        <item>week</item>
+        <item>month</item>
+        <item>year</item>
+    </string-array>
+    <string-array name="period_names">
+        <!--item >never</item-->
+        <item>Once</item>
+        <item>Hourly</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
+    <string-array name="dimensions">
+        <item>km</item>
+        <item>mi</item>
+        <item>m</item>
+        <item>ft</item>
+        <item>cm</item>
+        <item>in</item>
+    </string-array>
+    <string-array name="distances">
+        <item>1km</item>
+        <item>5km</item>
+        <item>10km</item>
+        <item>25km</item>
+        <item>50km</item>
+    </string-array>
+    <string-array name="sources">
+        <item>camera</item>
+        <item>library</item>
+    </string-array>
+    <string-array name="currency_codes">
+        <item>btc</item>
+        <item>eth</item>
+        <item>eur</item>
+        <item>gbp</item>
+        <item>usd</item>
+        <item>zar</item>
+    </string-array>
+    <string-array name="currency_symbols">
+        <item>฿</item>
+        <item>Ξ</item>
+        <item>€</item>
+        <item>£</item>
+        <item>$</item>
+        <item>R</item>
+    </string-array>
+    <string-array name="weights">
+        <item>kg</item>
+        <item>lbs</item>
+    </string-array>
+</resources>

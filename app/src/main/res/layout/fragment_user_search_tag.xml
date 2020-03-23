@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_user_search_tag"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="@dimen/label_vertical_margin"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/label_horizontal_margin"
+            android:paddingRight="@dimen/label_horizontal_margin">
+
+            <!--TextView
+                android:id="@+id/lblSearch"
+                android:text="Search"
+                android:textSize="@dimen/font_content_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search tags"
+                android:maxLines="1"
+                android:singleLine="true">
+                <requestFocus />
+            </TextView-->
+
+            <!--RadioGroup
+                android:id="@+id/radRadius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rad1km"
+                    android:text="1km" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rad5km"
+                    android:text="5km" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rad10km"
+                    android:text="10km" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rad25km"
+                    android:text="25km" />
+
+            </RadioGroup-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <SeekBar
+                    android:id="@+id/seeRadius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:max="50" />
+                <TextView
+                    android:id="@+id/txtRadius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="km"/>
+            </LinearLayout>
+
+
+            <com.koopey.view.TagTokenAutoCompleteView
+                android:id="@+id/lstTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawablePadding="@dimen/text_horizontal_margin"
+                android:hint="tags"
+                android:maxLines="5"
+                android:paddingBottom="@dimen/text_horizontal_margin"
+                android:paddingTop="@dimen/text_vertical_margin">
+
+                <requestFocus />
+            </com.koopey.view.TagTokenAutoCompleteView>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radGrpPeriod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/optHour"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/optHour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_hour" />
+
+                <RadioButton
+                    android:id="@+id/optDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_day" />
+
+                <RadioButton
+                    android:id="@+id/optWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_week" />
+
+                <RadioButton
+                    android:id="@+id/optMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_month" />
+            </RadioGroup>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtMin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_min"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@integer/user_search_min"
+                    android:textSize="@dimen/font_content_size"></EditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtMax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_max"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@integer/user_search_max"
+                    android:textSize="@dimen/font_content_size"></EditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/lstCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_currency"
+                android:textSize="@dimen/font_content_size"></Spinner>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/button_vertical_margin"
+        android:layout_marginRight="@dimen/label_horizontal_margin"
+        android:src="@drawable/ic_search_black_24dp"></android.support.design.widget.FloatingActionButton>
+
+
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_review"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/label_horizontal_margin"
+    android:paddingRight="@dimen/label_horizontal_margin">
+    <!--RatingBar
+        android:id="@+id/ratReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/label_vertical_margin"
+        android:paddingBottom="@dimen/label_vertical_margin"
+        android:numStars="5"
+        android:max="5"/-->
+
+
+
+    <TextView
+        android:id="@+id/lblComment"
+        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/label_horizontal_margin"
+        android:paddingBottom="@dimen/label_vertical_margin"
+        android:text="Comment"
+        android:textSize="@dimen/font_content_size"
+        android:theme="@style/AppTheme.FormHeader"
+        ></TextView>
+    <EditText
+        android:id="@+id/txtComment"
+        android:background="@drawable/textview_border"
+        android:hint=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:maxLength="100"
+        android:lines="4"
+        android:paddingLeft="@dimen/text_horizontal_margin"
+        android:paddingRight="@dimen/text_horizontal_margin"
+        android:singleLine="false"
+        android:text=""
+        android:textSize="@dimen/font_content_size">
+    </EditText>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnThumbUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_thumb_up_black_24dp">
+    </android.support.design.widget.FloatingActionButton>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnThumbDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_thumb_down_black_24dp">
+    </android.support.design.widget.FloatingActionButton>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_cancel_black_24dp">
+    </android.support.design.widget.FloatingActionButton>
+    </LinearLayout>
+</LinearLayout>

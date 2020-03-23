@@ -1,0 +1,319 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"></android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layoutDirection="inherit"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgAvatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:clickable="true"
+                        android:contentDescription="@string/label_avatar"
+                        android:onClick="onImageUpload"
+                        android:scaleType="centerCrop"
+                        android:scrollbars="none"
+                        android:src="@drawable/default_user"></ImageView>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_you"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layoutDirection="inherit"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical">
+
+                    <!--TextView
+                        android:id="@+id/txtYou"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_grey_light"
+                        android:clickable="false"
+                        android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+                        android:drawablePadding="@dimen/label_horizontal_margin"
+                        android:drawableTint="@color/color_grey_dark"
+                        android:focusable="false"
+                        android:padding="@dimen/label_vertical_margin"
+                        android:text="@string/label_you"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_grey_dark"
+                        android:textSize="@dimen/font_sub_header_size" /-->
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/txtAlias"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                            android:hint="@string/label_alias"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColorHint="@color/place_autocomplete_search_hint"
+                            android:textSize="@dimen/font_content_size">
+
+                            <requestFocus />
+                        </EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/txtName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_name"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:text=""></EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/txtPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_password"
+                            android:inputType="textPassword"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:text=""></EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/txtEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_email"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:text=""></EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/txtMobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_mobile"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:text=""></EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/txtDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/label_description"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:text=""></EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <DatePicker
+                        android:id="@+id/txtBirthday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:calendarViewShown="false"
+                        android:datePickerMode="spinner"
+                        android:hint="@string/label_birthday"
+                        android:startYear="1910"></DatePicker>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layoutDirection="inherit"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/subLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:clickable="false"
+                        android:drawableLeft="@drawable/ic_add_location_grey_24dp"
+                        android:drawablePadding="@dimen/label_horizontal_margin"
+                        android:drawableTint="@color/color_grey_dark"
+                        android:focusable="false"
+                        android:padding="@dimen/label_vertical_margin"
+                        android:text="@string/label_location"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_grey_dark"
+                        android:textSize="@dimen/font_sub_header_size" />
+
+                    <fragment
+                        android:id="@+id/place_autocomplete_fragment"
+                        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_address" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layoutDirection="inherit"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtServices"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_grey_light"
+                        android:clickable="false"
+                        android:drawableLeft="@drawable/ic_pan_tool_grey_24dp"
+                        android:drawablePadding="@dimen/label_horizontal_margin"
+                        android:drawableTint="@color/color_grey_dark"
+                        android:focusable="false"
+                        android:padding="@dimen/label_vertical_margin"
+                        android:text="@string/label_you"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_grey_dark"
+                        android:textSize="@dimen/font_sub_header_size" />
+
+                    <Spinner
+                        android:id="@+id/lstCurrency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_currency"
+                        android:text=""
+                        android:textSize="@dimen/font_content_size"></Spinner>
+
+                    <com.koopey.view.TagTokenAutoCompleteView
+                        android:id="@+id/lstTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="tags"
+                        android:maxLines="5"
+                        android:textSize="@dimen/font_content_size" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:clickable="true"
+            android:src="@drawable/ic_vpn_key_black_24dp"></android.support.design.widget.FloatingActionButton>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/button_vertical_margin"
+            android:layout_marginRight="@dimen/label_horizontal_margin"
+            android:clickable="true"
+            android:src="@drawable/ic_add_black_24dp"></android.support.design.widget.FloatingActionButton>
+    </LinearLayout>
+</RelativeLayout><!--/android.support.design.widget.CoordinatorLayout--><!-- app:popupTheme="@style/AppTheme.PopupOverlay" ?attr/actionBarSize Toolbar-->

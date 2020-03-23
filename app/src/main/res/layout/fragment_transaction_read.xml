@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_transaction_read"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_horizontal_margin"
+            android:layout_marginRight="@dimen/text_horizontal_margin"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_name"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="@dimen/font_content_size"
+                android:layout_marginTop="@dimen/text_vertical_margin"
+                android:layout_marginBottom="@dimen/text_vertical_margin"></TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_vertical_margin"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:singleLine="true"
+                    android:text="@string/label_value"
+                    android:textSize="@dimen/font_content_size"></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textSize="@dimen/font_content_size"></TextView>
+
+                    <TextView
+                        android:id="@+id/txtCurrency1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_horizontal_margin"
+                        android:text="GBP" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_vertical_margin"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/label_quantity"
+                    android:textSize="@dimen/font_content_size"></TextView>
+
+                <TextView
+                    android:id="@+id/txtQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_weight=".5"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textSize="@dimen/font_content_size"></TextView>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_vertical_margin"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/label_total"
+                    android:textSize="@dimen/font_content_size"></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textSize="@dimen/font_content_size"></TextView>
+
+                    <TextView
+                        android:id="@+id/txtCurrency2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_horizontal_margin"
+                        android:text="GBP" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_vertical_margin"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/label_state"
+                    android:textSize="@dimen/font_content_size"></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textSize="@dimen/font_content_size"></TextView>
+
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_vertical_margin"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/label_start"
+                    android:textSize="@dimen/font_content_size"></TextView>
+
+
+                    <TextView
+                        android:id="@+id/txtStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textSize="@dimen/font_content_size"></TextView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_light"
+                android:clickable="false"
+                android:focusable="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_vertical_margin"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/label_end"
+                    android:textSize="@dimen/font_content_size"></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textSize="@dimen/font_content_size"></TextView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/imgSecret"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@color/color_background_light"
+                android:clickable="false"
+                android:contentDescription="@string/label_description"
+                android:focusable="false"
+                android:scaleType="centerCrop"
+                android:scrollbars="none"
+                android:src="@drawable/ic_payment_black_24dp"></ImageView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

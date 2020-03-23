@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_messages"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:layout_marginTop="0dp"
+    android:paddingTop="0dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layoutList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:layout_marginTop="0dp"
+        android:paddingTop="0dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stackFromBottom="false"></ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/label_horizontal_margin"
+        android:layout_marginRight="@dimen/label_horizontal_margin"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txtMessage"
+                android:drawableEnd="@drawable/ic_email_black_24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/label_message"
+                android:maxLength="100"
+                android:singleLine="true"
+                android:textSize="@dimen/font_content_size"
+                ></EditText>
+
+
+    </LinearLayout>
+
+</LinearLayout>

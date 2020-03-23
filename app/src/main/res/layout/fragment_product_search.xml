@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_product_search"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="@dimen/label_vertical_margin"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/label_horizontal_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:hint="Search tag"
+                android:maxLines="1"
+                android:paddingTop="@dimen/label_vertical_margin"
+                android:singleLine="true"
+                android:text="@string/label_tag"
+                android:textSize="@dimen/font_content_size"
+                android:theme="@style/AppTheme.FormHeader"></TextView>
+
+            <com.koopey.view.TagTokenAutoCompleteView
+                android:id="@+id/lstTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                                android:hint="tags"
+                android:maxLines="5"
+                android:paddingBottom="@dimen/text_horizontal_margin"
+                android:paddingTop="@dimen/text_vertical_margin">
+
+                <requestFocus />
+            </com.koopey.view.TagTokenAutoCompleteView>
+
+            <TextView
+                android:id="@+id/lblValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:maxLines="1"
+                android:paddingTop="@dimen/label_vertical_margin"
+                android:singleLine="true"
+                android:text="@string/label_value"
+                android:textSize="@dimen/font_content_size"
+                android:theme="@style/AppTheme.FormHeader"></TextView>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtMin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_min"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@integer/user_search_min"
+                                      android:textSize="@dimen/font_content_size"></EditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtMax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_max"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@integer/user_search_max"
+                    android:textSize="@dimen/font_content_size"></EditText>
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/lstCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:hint="@string/label_currency"
+                android:text=""
+                android:textSize="@dimen/font_content_size"></Spinner>
+
+        </LinearLayout>
+    </ScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/button_vertical_margin"
+        android:layout_marginRight="@dimen/label_horizontal_margin"
+        android:src="@drawable/ic_search_black_24dp"></android.support.design.widget.FloatingActionButton>
+</RelativeLayout>

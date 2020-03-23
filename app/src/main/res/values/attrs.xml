@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ParentChildListFragment">
+        <attr name="source" format="string"/>
+        <attr name="showReviews" format="boolean" />
+        <attr name="showValue" format="boolean" />
+        <attr name="showValues" format="boolean" />
+        <attr name="showImage" format="boolean" />
+        <attr name="showImages" format="boolean" />
+        <attr name="showScrollbars" format="boolean" />
+        <attr name="showCreateButton" format="boolean" />
+        <attr name="showUpdateButton" format="boolean" />
+        <attr name="showPrimaryButton" format="boolean" />
+        <attr name="showDeleteButton" format="boolean" />
+        <attr name="showPeriodSpinner" format="boolean" />
+    </declare-styleable>
+</resources>

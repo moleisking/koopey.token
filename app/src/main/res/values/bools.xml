@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="events">true</bool>
+    <bool name="products">true</bool>
+    <bool name="adverts">true</bool>
+    <bool name="services">true</bool>
+    <bool name="transactions">true</bool>
+    <bool name="maps">true</bool>
+    <bool name="bitcoin">true</bool>
+    <bool name="ethereum">true</bool>
+    <bool name="toko">true</bool>
+    <bool name="alias">true</bool>
+    <bool name="name">true</bool>
+    <bool name="address">true</bool>
+    <bool name="mobile">true</bool>
+</resources>
