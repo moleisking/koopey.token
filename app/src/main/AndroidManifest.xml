@@ -5,10 +5,6 @@
     android:versionCode="1"
     android:versionName="1.1">
 
-    <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="26" />
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -32,7 +28,6 @@
 
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@drawable/k"
         android:label="@string/app_name"
@@ -60,8 +55,6 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode"/>
 
-
-
         <uses-library android:name="com.google.android.maps" />
 
         <activity
@@ -86,13 +79,9 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
 
-        <service
-            android:enabled="true"
-            android:name=".controller.MessageIntentService"
-            android:exported="false" />
         <receiver android:name=".controller.MessageReceiver" />
 
-        <provider
+        <!--provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
@@ -100,7 +89,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
-        </provider>
+        </provider-->
         <!--receiver android:name=".controller.MessageServiceStarterReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

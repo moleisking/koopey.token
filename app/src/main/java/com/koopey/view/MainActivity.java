@@ -9,18 +9,10 @@ import android.content.pm.PackageManager;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
@@ -28,22 +20,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 import com.koopey.R;
 import com.koopey.common.ImageHelper;
 import com.koopey.common.SerializeHelper;
 import com.koopey.controller.GetJSON;
-import com.koopey.controller.LocationReceiver;
-import com.koopey.controller.MessageIntentService;
-import com.koopey.controller.MessageReceiver;
 import com.koopey.model.Alert;
 import com.koopey.model.Asset;
 import com.koopey.model.Assets;
 import com.koopey.model.AuthUser;
-import com.koopey.model.Bitcoin;
-import com.koopey.model.Ethereum;
 import com.koopey.model.Image;
 import com.koopey.model.Images;
-import com.koopey.model.Messages;
 import com.koopey.model.Tags;
 import com.koopey.model.Transaction;
 import com.koopey.model.Transactions;
@@ -63,7 +58,7 @@ import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity implements GetJSON.GetResponseListener,
-        ImageListFragment.OnImageListFragmentListener, NavigationView.OnNavigationItemSelectedListener, MessageIntentService.OnMessageListener /*, View.OnTouchListener*/ {
+        ImageListFragment.OnImageListFragmentListener, NavigationView.OnNavigationItemSelectedListener /*, View.OnTouchListener*/ {
 
     private static final int PERMISSION_REQUEST = 1004;
     private final String LOG_HEADER = "MAIN:ACTIVITY";
@@ -74,8 +69,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
     private TextView txtAliasOrName, txtDescription;
     private AuthUser authUser;
     private Alert alert;
-    private Bitcoin bitcoin;
-    private Ethereum ethereum;
     private Point touch;
     //private GestureDetector gestureDetector;
 
@@ -182,19 +175,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
                 if (this.alert.isError()) {
                     Toast.makeText(this, getResources().getString(R.string.error_update), Toast.LENGTH_SHORT).show();
                 }
-            } else if (header.contains("bitcoin")) {
-                //Downloaded during app load
-                this.bitcoin = new Bitcoin();
-                this.bitcoin.parseJSON(output);
-                SerializeHelper.saveObject(this, bitcoin);
-            } else if (header.contains("ethereum")) {
-                this.ethereum = new Ethereum();
-                this.ethereum.parseJSON(output);
-                SerializeHelper.saveObject(this, ethereum);
-            } else if (header.contains("messages")) {
-                Messages messages = new Messages();
-                messages.parseJSON(output);
-                SerializeHelper.saveObject(this, messages);
             } else if (header.contains("assets")) {
                 Assets assets = new Assets();
                 assets.fileType = Assets.MY_ASSETS_FILE_NAME;
@@ -242,8 +222,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
             showPreviousResults();
         } else if (id == R.id.nav_setting) {
             showSettingFragment();
-        } else if (id == R.id.nav_conversations) {
-            showConversationListFragment();
         } else if (id == R.id.nav_share) {
         } else if (id == R.id.nav_wallets) {
             showWalletListFragment();
@@ -262,10 +240,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
             if (fragment != null) {
                 if (fragment instanceof AssetReadFragment) {
                     ((AssetReadFragment) fragment).populateAsset();
-                } else if (fragment instanceof ConversationListFragment) {
-                    ((ConversationListFragment) fragment).syncConversations();
-                } else if (fragment instanceof MessageListFragment) {
-                    ((MessageListFragment) fragment).syncConversation();
                 } else if (fragment instanceof MyAssetListFragment) {
                     ((MyAssetListFragment) fragment).syncAssets();
                 } else if (fragment instanceof TransactionListFragment) {
@@ -303,27 +277,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
                 Log.d(LOG_HEADER, "onRequestPermissionsResult error");
             }
         }
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(LOG_HEADER, "onRestart");
-        startNotificationService();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(LOG_HEADER, "onStart");
-        startNotificationService();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(LOG_HEADER, "onStop");
-        stopNotificationService();
     }
 
     public void createImageListFragmentEvent(Image image) {
@@ -365,23 +318,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
                 ((AssetUpdateFragment) fragment).updateImageListFragmentEvent(image);
             }
         }
-    }
-
-    public void updateMessages(Messages messages) {
-        Log.d(LOG_HEADER + ":UP:MSG", "updateMessages");
-        messages.print();
-    }
-
-    public void startNotificationService() {
-        //Start message and location service
-        MessageReceiver.startAlarm(getApplicationContext());
-        LocationReceiver.startAlarm(getApplicationContext());
-    }
-
-    public void stopNotificationService() {
-        //Stop message and location service
-        MessageReceiver.stopAlarm(getApplicationContext());
-        LocationReceiver.stopAlarm(getApplicationContext());
     }
 
     protected AuthUser getAuthUserFromFile() {
@@ -439,13 +375,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
                 .commit();
     }
 
-    public void showConversationListFragment() {
-        this.getFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, new ConversationListFragment())
-                .addToBackStack("fragment_conversations")
-                .commit();
-    }
-
     protected void showDashBoardFragment() {
         this.getFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, new DashboardFragment())
@@ -492,13 +421,6 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         this.finish();
-    }
-
-    public void showMessageListFragment() {
-        this.getFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, new MessageListFragment())
-                .addToBackStack("fragment_messages")
-                .commit();
     }
 
    /* public void showMyAssetReadFragment(Asset asset) {
@@ -738,7 +660,7 @@ public class MainActivity extends AppCompatActivity implements GetJSON.GetRespon
         if (wallet != null) {
             this.getIntent().putExtra("wallet", wallet);
             this.getFragmentManager().beginTransaction()
-                    .replace(R.id.content_frame, new ConversationListFragment())
+                    .replace(R.id.content_frame, new WalletReadFragment())
                     .addToBackStack("fragment_wallet_read")
                     .commit();
         }

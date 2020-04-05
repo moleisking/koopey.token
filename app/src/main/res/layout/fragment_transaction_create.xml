@@ -16,7 +16,7 @@
             android:orientation="vertical"
             android:paddingBottom="15dp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -31,9 +31,9 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -48,9 +48,9 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -68,9 +68,9 @@
 
                     <requestFocus />
                 </EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -85,9 +85,9 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -102,7 +102,7 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <TextView
@@ -119,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -131,9 +131,9 @@
                     android:inputType="date"
                     android:singleLine="true"
                     android:text="" />
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -145,11 +145,11 @@
                     android:inputType="date"
                     android:singleLine="true"
                     android:text="" />
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </ScrollView>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/button_vertical_margin"
         android:layout_marginRight="@dimen/label_horizontal_margin"
-        android:src="@drawable/ic_add_black_24dp"></android.support.design.widget.FloatingActionButton>
+        android:src="@drawable/ic_add_black_24dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 
 </RelativeLayout>

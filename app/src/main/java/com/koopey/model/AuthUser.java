@@ -29,7 +29,6 @@ public class AuthUser extends User implements Serializable {
     public boolean terms = false;
     public boolean cookies = false;
     public Transactions transactions = new Transactions();
-    public Messages messages = new Messages();
 
     public AuthUser() {
         this.token = "";
@@ -88,9 +87,7 @@ public class AuthUser extends User implements Serializable {
             if (jsonObject.has("transactions")) {
                 this.transactions.parseJSON(jsonObject.getJSONArray("transactions"));
             }
-            if (jsonObject.has("messages")) {
-                this.messages.parseJSON(jsonObject.getJSONArray("messages"));
-            }
+
             super.parseJSON(jsonObject);
         } catch (Exception ex) {
             Log.d(LOG_HEADER + ":ER", ex.getMessage());
@@ -108,7 +105,6 @@ public class AuthUser extends User implements Serializable {
         } catch (Exception e) {
         }
         this.transactions.print();
-        this.messages.print();
         super.print();
     }
 

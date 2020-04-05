@@ -51,7 +51,6 @@ public class User implements Serializable, Comparator<User>, Comparable<User> {
     //Objects
     public Location location = new Location();
     public Reviews reviews = new Reviews();
-    public Scores scores = new Scores();
     public Wallets wallets = new Wallets();
     //private transient Context context;
 
@@ -204,9 +203,6 @@ public class User implements Serializable, Comparator<User>, Comparable<User> {
                 this.location.parseJSON(jsonObject.getJSONObject("location"));
             }
             //Arrays
-            if (jsonObject.has("scores")) {
-                this.scores.parseJSON(jsonObject.getJSONArray("scores"));
-            }
             if (jsonObject.has("reviews")) {
                 this.reviews.parseJSON(jsonObject.getJSONArray("reviews"));
             }
@@ -285,9 +281,6 @@ public class User implements Serializable, Comparator<User>, Comparable<User> {
             //Arrays
             if (this.reviews.size() > 0) {
                 jsonObject.put("reviews", this.reviews.toJSONArray());
-            }
-            if (this.scores.size() > 0) {
-                jsonObject.put("scores", this.scores.toJSONArray());
             }
             if (this.wallets.size() > 0) {
                 jsonObject.put("wallets", wallets.toJSONArray());

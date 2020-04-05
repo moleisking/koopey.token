@@ -15,7 +15,7 @@
             android:orientation="vertical"
             android:paddingBottom="15dp">
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
@@ -29,9 +29,9 @@
                     android:lines="1"
                     android:text=""
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
@@ -45,9 +45,9 @@
                     android:lines="1"
                     android:text=""
                     android:textSize="@dimen/font_content_size"> <requestFocus /></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
@@ -61,7 +61,7 @@
                     android:lines="1"
                     android:text=""
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
 
         </LinearLayout>

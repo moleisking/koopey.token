@@ -4,19 +4,16 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
@@ -24,12 +21,8 @@ import com.koopey.R;
 import com.koopey.common.ImageHelper;
 import com.koopey.common.SerializeHelper;
 import com.koopey.controller.PostJSON;
-import com.koopey.controller.TagAdapter;
 import com.koopey.model.Alert;
 import com.koopey.model.AuthUser;
-import com.koopey.model.Bitcoin;
-import com.koopey.model.Ethereum;
-import com.koopey.model.User;
 import com.koopey.model.Wallet;
 
 
@@ -89,19 +82,7 @@ public class WalletReadFragment extends Fragment implements PostJSON.PostRespons
     public void onPostResponse(String output) {
         try {
             String header = (output.length() >= 20) ? output.substring(0, 19).toLowerCase() : output;
-            if (header.contains("bitcoin")) {
-                Bitcoin bitcoin = new Bitcoin();
-                bitcoin.parseJSON(output);
-                SerializeHelper.saveObject(this.getActivity(), bitcoin);
-                this.txtValue.setText(String.valueOf(bitcoin.amount) );
-                this.txtCurrency.setText("BTC");
-            } else if (header.contains("ethereum")) {
-                Ethereum ethereum = new Ethereum();
-                ethereum.parseJSON(output);
-                SerializeHelper.saveObject(this.getActivity(), ethereum);
-                this.txtValue.setText(String.valueOf(ethereum.balance) );
-                this.txtCurrency.setText("ETH");
-            } else if (header.contains("alert")) {
+            if (header.contains("alert")) {
                 Alert alert = new Alert();
                 alert.parseJSON(output);
                 if (alert.isError()) {
@@ -125,11 +106,7 @@ public class WalletReadFragment extends Fragment implements PostJSON.PostRespons
         if (this.wallet != null && !this.wallet.isEmpty()) {
             this.txtCurrency.setText(this.wallet.currency.toUpperCase());
             if(showValue) {
-                if (this.wallet.currency.equals("btc") ){
-                    this.postBitcoinBalance();
-                } else if (this.wallet.currency.equals("eth")) {
-                    this.postEthereumBalance();
-                } else if (this.wallet.currency.equals("tok")) {
+                if (this.wallet.currency.equals("tok")) {
                     this.txtValue.setText(this.wallet.value.toString());
                 }
             }
@@ -155,32 +132,6 @@ public class WalletReadFragment extends Fragment implements PostJSON.PostRespons
             this.txtValue.setVisibility(View.GONE);
         } else {
             this.txtValue.setVisibility(View.VISIBLE);
-        }
-    }
-
-    protected void postBitcoinBalance() {
-        Wallet bitcoinWallet = this.authUser.wallets.getBitcoinWallet();
-        if (bitcoinWallet != null && !bitcoinWallet.name.equals("")) {
-            PostJSON asyncTask = new PostJSON(this.getActivity());
-            Bitcoin bitcoin = new Bitcoin();
-            bitcoin.address = this.authUser.wallets.getBitcoinWallet().name;
-            asyncTask.delegate = this;
-            asyncTask.execute(this.getString(R.string.get_bitcoin_read_balance),
-                    bitcoin.toString(),
-                    this.authUser.getToken()); //"{ account :" + myUser.BTCAccount + "}"
-        }
-    }
-
-    protected void postEthereumBalance() {
-        Wallet ethereumWallet = this.authUser.wallets.getEthereumWallet();
-        if (ethereumWallet != null && !ethereumWallet.name.equals("")) {
-            PostJSON asyncTask = new PostJSON(this.getActivity());
-            Ethereum ethereum = new Ethereum();
-            ethereum.account = this.authUser.wallets.getEthereumWallet().name;
-            asyncTask.delegate = this;
-            asyncTask.execute(this.getString(R.string.get_ethereum_read_balance),
-                    ethereum.toString(),
-                    this.authUser.getToken()); //"{ account :" + myUser.BTCAccount + "}"
         }
     }
 

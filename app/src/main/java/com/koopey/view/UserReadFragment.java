@@ -6,7 +6,6 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +18,7 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeReader;
@@ -131,7 +131,7 @@ public class UserReadFragment extends Fragment implements PostJSON.PostResponseL
             if (v.getId() == btnMessage.getId()) {
                 //Show message fragment with current user
                 this.getActivity().getIntent().putExtra("user", this.user);
-                ((MainActivity) getActivity()).showMessageListFragment();
+
             } else if (v.getId() == btnUpdate.getId()) {
                 ((MainActivity) getActivity()).showUserUpdateFragment();
             }

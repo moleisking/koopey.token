@@ -19,7 +19,7 @@
         android:paddingBottom="@dimen/label_vertical_margin"
         android:scrollbars="vertical">
     </ListView>
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnCreate"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
@@ -30,7 +30,7 @@
         android:clickable="true"
         android:src="@drawable/ic_add_black_24dp"
         android:visibility="gone">
-    </android.support.design.widget.FloatingActionButton>
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
     <!--/LinearLayout>
 </ScrollView-->
 </RelativeLayout>

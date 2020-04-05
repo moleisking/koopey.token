@@ -20,7 +20,7 @@
             android:orientation="vertical"
             android:paddingLeft="@dimen/label_horizontal_margin">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -35,9 +35,9 @@
                     android:text="C Alias"
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></android.support.design.widget.TextInputEditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -51,12 +51,12 @@
                     android:maxLines="3"
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></android.support.design.widget.TextInputEditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,6 +64,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/button_vertical_margin"
         android:layout_marginRight="@dimen/label_horizontal_margin"
-        android:src="@drawable/ic_search_black_24dp"></android.support.design.widget.FloatingActionButton>
+        android:src="@drawable/ic_search_black_24dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </RelativeLayout>

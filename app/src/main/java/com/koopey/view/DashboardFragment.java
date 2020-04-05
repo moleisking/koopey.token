@@ -17,7 +17,6 @@ import com.koopey.common.SerializeHelper;
 import com.koopey.controller.PostJSON;
 import com.koopey.model.Alert;
 import com.koopey.model.AuthUser;
-import com.koopey.model.Messages;
 
 /**
  * Created by Scott on 21/07/2017.
@@ -29,7 +28,6 @@ public class DashboardFragment extends Fragment implements PostJSON.PostResponse
     private RatingBar starAverage;
     private Switch btnAvailable, btnTrack;
     private AuthUser authUser = new AuthUser();
-    private Messages messages;
     private WalletListFragment frgWallets;
 
 
@@ -68,9 +66,6 @@ public class DashboardFragment extends Fragment implements PostJSON.PostResponse
 
         this.authUser = ((MainActivity) getActivity()).getAuthUserFromFile();
 
-        if (SerializeHelper.hasFile(this.getActivity(), Messages.MESSAGES_FILE_NAME)) {
-            this.messages = (Messages) SerializeHelper.loadObject(this.getActivity(), Messages.MESSAGES_FILE_NAME);
-        }
     }
 
     @Override
@@ -86,10 +81,7 @@ public class DashboardFragment extends Fragment implements PostJSON.PostResponse
             this.txtNegative.setText(String.valueOf(this.myUser.reviews.getNegative()));
             this.starAverage.setNumStars(this.myUser.reviews.getAverage());
         }*/
-        if (this.messages != null) {
-            this.txtUnread.setText(String.valueOf(this.messages.countUnread()));
-            this.txtUnsent.setText(String.valueOf(this.messages.countUnsent()));
-        }
+
         if (getResources().getBoolean(R.bool.transactions)) {
             this.frgWallets.setVisibility(View.VISIBLE);
         } else {

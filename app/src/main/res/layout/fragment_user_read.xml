@@ -168,7 +168,7 @@
         android:layout_alignParentRight="true"
         android:orientation="horizontal">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -177,9 +177,9 @@
             android:layout_marginBottom="@dimen/button_vertical_margin"
             android:layout_marginRight="@dimen/label_horizontal_margin"
             android:src="@drawable/ic_email_black_24dp"
-            android:visibility="visible"></android.support.design.widget.FloatingActionButton>
+            android:visibility="visible"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -188,9 +188,9 @@
             android:layout_marginBottom="@dimen/button_vertical_margin"
             android:layout_marginRight="@dimen/label_horizontal_margin"
             android:src="@drawable/ic_mode_edit_black_24dp"
-            android:visibility="gone"></android.support.design.widget.FloatingActionButton>
+            android:visibility="gone"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
             android:layout_marginBottom="@dimen/button_vertical_margin"
             android:layout_marginRight="@dimen/label_horizontal_margin"
             android:src="@drawable/ic_delete_black_24dp"
-            android:visibility="gone"></android.support.design.widget.FloatingActionButton>
+            android:visibility="gone"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     </LinearLayout>
 

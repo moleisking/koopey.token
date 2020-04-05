@@ -284,7 +284,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -292,5 +292,5 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/button_vertical_margin"
         android:layout_marginRight="@dimen/label_horizontal_margin"
-        android:src="@drawable/ic_add_black_24dp"></android.support.design.widget.FloatingActionButton>
+        android:src="@drawable/ic_add_black_24dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 </RelativeLayout>

@@ -22,8 +22,6 @@ import com.koopey.controller.GetJSON;
 import com.koopey.controller.PostJSON;
 import com.koopey.controller.WalletAdapter;
 import com.koopey.model.Alert;
-import com.koopey.model.Bitcoin;
-import com.koopey.model.Ethereum;
 import com.koopey.model.AuthUser;
 import com.koopey.model.Wallet;
 import com.koopey.model.Wallets;
@@ -36,8 +34,7 @@ public class WalletListFragment extends ListFragment implements GetJSON.GetRespo
 
     private final String LOG_HEADER = "WALLET:LIST";
     private final int WALLET_LIST_FRAGMENT = 369;
-    private Bitcoin bitcoin = new Bitcoin();
-    private Ethereum ethereum = new Ethereum();
+
     private FragmentManager fragmentManager;
     private AuthUser authUser = new AuthUser();
     private WalletDialogFragment walletDialogFragment = new WalletDialogFragment();
@@ -143,20 +140,6 @@ public class WalletListFragment extends ListFragment implements GetJSON.GetRespo
                 } else if (alert.isSuccess()) {
                     Toast.makeText(this.getActivity(), getResources().getString(R.string.info_update), Toast.LENGTH_SHORT).show();
                 }
-            } else if (output.contains("bitcoin")) {
-                this.bitcoin = new Bitcoin();
-                this.bitcoin.parseJSON(output);
-                SerializeHelper.saveObject(this.getActivity(), bitcoin);
-                //this.txtBitcoinWallet.setText(String.valueOf(bitcoin.amount) + " BTC");
-                this.wallets.getBitcoinWallet().value = this.bitcoin.amount;
-                //this.setWallets(this.myUser.wallets);
-            } else if (output.contains("ethereum")) {
-                this.ethereum = new Ethereum();
-                this.ethereum.parseJSON(output);
-                SerializeHelper.saveObject(this.getActivity(), ethereum);
-                this.wallets.getEthereumWallet().value = this.ethereum.balance;
-                //this.setWallets(this.myUser.wallets);
-                //this.txtEthereumWallet.setText(String.valueOf(ethereum.balance) + " ETH");
             }
         } catch (Exception ex) {
             Log.d(LOG_HEADER + ":ER", ex.getMessage());
@@ -182,8 +165,7 @@ public class WalletListFragment extends ListFragment implements GetJSON.GetRespo
                 this.walletAdapter = new WalletAdapter(this.getActivity(), this.wallets, this.showImages, this.showValues);
                 this.setListAdapter(walletAdapter);
                 if (this.showValues) {
-                    this.postBitcoinBalance();
-                    this.postEthereumBalance();
+
                 }
                 if (this.showScrollbars) {
                     ((MainActivity) getActivity()).setTitle(getResources().getString(R.string.label_wallets));
@@ -218,32 +200,6 @@ public class WalletListFragment extends ListFragment implements GetJSON.GetRespo
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
         listView.requestLayout();
-    }
-
-    protected void postBitcoinBalance() {
-        Wallet bitcoinWallet = this.authUser.wallets.getBitcoinWallet();
-        if (bitcoinWallet != null && !bitcoinWallet.name.equals("")) {
-            PostJSON asyncTask = new PostJSON(this.getActivity());
-            Bitcoin bitcoin = new Bitcoin();
-            bitcoin.address = this.authUser.wallets.getBitcoinWallet().name;
-            asyncTask.delegate = this;
-            asyncTask.execute(this.getString(R.string.get_bitcoin_read_balance),
-                    bitcoin.toString(),
-                    this.authUser.getToken()); //"{ account :" + myUser.BTCAccount + "}"
-        }
-    }
-
-    protected void postEthereumBalance() {
-        Wallet ethereumWallet = this.authUser.wallets.getEthereumWallet();
-        if (ethereumWallet != null && !ethereumWallet.name.equals("")) {
-            PostJSON asyncTask = new PostJSON(this.getActivity());
-            Ethereum ethereum = new Ethereum();
-            ethereum.account = this.authUser.wallets.getEthereumWallet().name;
-            asyncTask.delegate = this;
-            asyncTask.execute(this.getString(R.string.get_ethereum_read_balance),
-                    ethereum.toString(),
-                    this.authUser.getToken()); //"{ account :" + myUser.BTCAccount + "}"
-        }
     }
 
     public void setVisibility(int visibility) {

@@ -1,13 +1,10 @@
 package com.koopey.view;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Fragment;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -27,8 +24,7 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.model.LatLng;
-
-import org.json.JSONObject;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import com.koopey.R;
 import com.koopey.common.HashHelper;
@@ -36,19 +32,13 @@ import com.koopey.common.ImageHelper;
 import com.koopey.common.SerializeHelper;
 import com.koopey.controller.GetJSON;
 import com.koopey.controller.PostJSON;
-import com.koopey.controller.TagAdapter;
 import com.koopey.controller.GPSReceiver;
 import com.koopey.model.Alert;
 import com.koopey.model.AuthUser;
-import com.koopey.model.Bitcoin;
-import com.koopey.model.Ethereum;
 import com.koopey.model.Image;
-import com.koopey.model.Tag;
 import com.koopey.model.Tags;
 
 import com.koopey.model.User;
-import com.koopey.model.Wallet;
-
 
 
 public class UserUpdateFragment extends  Fragment implements GetJSON.GetResponseListener, PostJSON.PostResponseListener ,
@@ -58,8 +48,7 @@ public class UserUpdateFragment extends  Fragment implements GetJSON.GetResponse
     public static final int REQUEST_GALLERY_IMAGE = 197;
     private ArrayAdapter<CharSequence> currencyCodeAdapter;
     private ArrayAdapter<CharSequence> currencySymbolAdapter;
-    private Bitcoin bitcoin;
-    private Ethereum ethereum;
+
     private final String LOG_HEADER = "USER:UPDATE";
     private final int USER_UPDATE_FRAGMENT = 102;
     private EditText  txtAddress , txtDescription, txtEducation, txtEmail, txtMobile, txtName ;
@@ -272,18 +261,6 @@ this.showImagePopupMenu(v);
                     SerializeHelper.saveObject(this.getActivity(), authUser);
                     Toast.makeText(this.getActivity(), getResources().getString(R.string.info_update), Toast.LENGTH_SHORT).show();
                 }
-            } else if (header.contains("bitcoin")) {
-                this.bitcoin = new Bitcoin();
-                this.bitcoin.parseJSON(output);
-                this.bitcoin.print();
-                SerializeHelper.saveObject(this.getActivity(), this.bitcoin);
-                Toast.makeText(this.getActivity(), getResources().getString(R.string.info_create_bitcoin), Toast.LENGTH_SHORT).show();
-            } else if (header.contains("ethereum")) {
-                this.ethereum = new Ethereum();
-                this.ethereum.parseJSON(output);
-                this.ethereum.print();
-                SerializeHelper.saveObject(this.getActivity(), this.ethereum);
-                Toast.makeText(this.getActivity(), getResources().getString(R.string.info_create_ethereum), Toast.LENGTH_SHORT).show();
             }
         } catch (Exception ex) {
             Log.w(LOG_HEADER + ":ER", ex.getMessage());

@@ -9,7 +9,6 @@ package com.koopey.view;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.os.Bundle;
@@ -18,14 +17,10 @@ import android.preference.PreferenceFragment;
 //import android.support.v4.app.Fragment;
 //import android.support.v4.preference.PreferenceFragment;
 //import android.support.v7.preference.PreferenceFragmentCompat;
-import android.support.design.widget.NavigationView;
+import com.google.android.material.navigation.NavigationView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,12 +37,10 @@ import com.koopey.controller.GPSReceiver;
 import com.koopey.controller.GetJSON;
 import com.koopey.controller.PostJSON;
 import com.koopey.model.Alert;
-import com.koopey.model.Messages;
 import com.koopey.model.AuthUser;
 import com.koopey.model.Assets;
 import com.koopey.model.Tags;
 import com.koopey.model.Transactions;
-import com.koopey.model.User;
 
 public class SettingFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener, GetJSON.GetResponseListener, PostJSON.PostResponseListener, GPSReceiver.OnGPSReceiverListener {
     private final String LOG_HEADER = "SG:FT:";
@@ -246,14 +239,6 @@ public class SettingFragment extends PreferenceFragment implements SharedPrefere
                 if (alert.isError()){
                     Toast.makeText(this.getActivity(), getResources().getString(R.string.error_update), Toast.LENGTH_LONG).show();
                 }
-            } else if (header.contains("messages")) {
-                //Found tags
-                Messages messages = new Messages();
-                messages.parseJSON(output);
-                SerializeHelper.saveObject(this.getActivity(), messages);
-                messages.print();
-                //Communicate change to end users
-                Toast.makeText(this.getActivity(), "Messages Refreshed", Toast.LENGTH_LONG).show();
             } else if (header.contains("products")) {
                 //Found profile
                 Assets myProducts = new Assets();
@@ -438,7 +423,6 @@ public class SettingFragment extends PreferenceFragment implements SharedPrefere
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Delete local file
-                        ((MainActivity) getActivity()).deleteFile(Messages.MESSAGES_FILE_NAME);
                         ((MainActivity) getActivity()).deleteFile(AuthUser.AUTH_USER_FILE_NAME);
                         ((MainActivity) getActivity()).deleteFile(Assets.MY_ASSETS_FILE_NAME);
                         ((MainActivity) getActivity()).deleteFile(Assets.ASSET_SEARCH_RESULTS_FILE_NAME);

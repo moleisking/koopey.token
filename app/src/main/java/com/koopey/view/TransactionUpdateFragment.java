@@ -2,22 +2,16 @@ package com.koopey.view;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
@@ -26,12 +20,8 @@ import com.koopey.common.CurrencyHelper;
 import com.koopey.common.DateTimeHelper;
 import com.koopey.common.ImageHelper;
 import com.koopey.common.SerializeHelper;
-import com.koopey.controller.PostBitcoin;
-import com.koopey.controller.PostEthereum;
 import com.koopey.controller.PostJSON;
 import com.koopey.model.Alert;
-import com.koopey.model.Bitcoin;
-import com.koopey.model.Ethereum;
 import com.koopey.model.AuthUser;
 import com.koopey.model.Transaction;
 import com.koopey.model.Transactions;
@@ -41,7 +31,7 @@ import com.koopey.model.Users;
 /**
  * Created by Scott on 06/04/2017.
  */
-public class TransactionUpdateFragment extends Fragment implements PostBitcoin.PostBitcoinListener, PostEthereum.PostEthereumListener, PostJSON.PostResponseListener, View.OnClickListener {
+public class TransactionUpdateFragment extends Fragment implements  PostJSON.PostResponseListener, View.OnClickListener {
 
     private static final int TRANSACTION_UPDATE_FRAGMENT = 402;
     private final String LOG_HEADER = "TRANSACTION:UPDATE";
@@ -51,8 +41,6 @@ public class TransactionUpdateFragment extends Fragment implements PostBitcoin.P
     private Transaction transaction = new Transaction();
     private Transactions transactions = new Transactions();
     private FloatingActionButton btnUpdate;
-    private PostBitcoin postBitcoin;
-    private PostEthereum postEthereum;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -237,13 +225,7 @@ public class TransactionUpdateFragment extends Fragment implements PostBitcoin.P
                 PostJSON asyncTask = new PostJSON(this.getActivity());//this.getActivity()
                 asyncTask.delegate = this;
                 asyncTask.execute(getResources().getString(R.string.post_transaction_update), this.transaction.toString(), this.authUser.getToken());
-                if(this.transaction.isBitcoin()){
-                    this.postBitcoin =  new PostBitcoin(this.getActivity(), this.authUser);
-                    this.postBitcoin.postReceipt(this.authUser, (this.transaction.totalValue / this.transaction.countBuyers()) );
-                } else if(this.transaction.isEthereum()){
-                    this.postEthereum =  new PostEthereum(this.getActivity(), this.authUser);
-                    this.postEthereum .postReceipt(this.authUser, String.valueOf((this.transaction.totalValue / this.transaction.countBuyers()) ) );
-                }
+
             } else  if (this.transaction.isSeller(this.authUser)) {
                 PostJSON asyncTask = new PostJSON(this.getActivity());//this.getActivity()
                 asyncTask.delegate = this;
@@ -258,13 +240,7 @@ public class TransactionUpdateFragment extends Fragment implements PostBitcoin.P
                 PostJSON asyncTask = new PostJSON(this.getActivity());//this.getActivity()
                 asyncTask.delegate = this;
                 asyncTask.execute(getResources().getString(R.string.post_transaction_update), this.transaction.toString(), this.authUser.getToken());
-                if (this.transaction.isBitcoin()) {
-                    this.postBitcoin = new PostBitcoin(this.getActivity(), this.authUser);
-                    this.postBitcoin.postReceipt(this.authUser, (this.transaction.totalValue / this.transaction.countBuyers()));
-                } else if (this.transaction.isEthereum()) {
-                    this.postEthereum = new PostEthereum(this.getActivity(), this.authUser);
-                    this.postEthereum.postReceipt(this.authUser, String.valueOf((this.transaction.totalValue / this.transaction.countBuyers())));
-                }
+
             }
         }
     }
@@ -277,31 +253,4 @@ public class TransactionUpdateFragment extends Fragment implements PostBitcoin.P
         }
     }
 
-    @Override
-    public void readBitcoinBalanceEvent(Bitcoin bitcoin){
-//Start Transaction
-    }
-
-    @Override
-    public void readBitcoinTransactionEvent(Bitcoin bitcoin){
-
-    }
-    @Override
-    public  void writeBitcoinMessageEvent(String message){
-        Toast.makeText(this.getActivity(), message, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void readEthereumBalanceEvent(Ethereum ethereum){
-
-    }
-
-    @Override
-    public  void readEthereumTransactionEvent(Ethereum ethereum){
-
-    }
-    @Override
-    public  void writeEthereumMessageEvent(String message){
-        Toast.makeText(this.getActivity(), message, Toast.LENGTH_LONG).show();
-    }
 }

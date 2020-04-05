@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import com.koopey.R;
 import com.koopey.common.CurrencyHelper;
@@ -144,10 +145,6 @@ public class AssetReadFragment extends Fragment implements PostJSON.PostResponse
     public void onClick(View v) {
         if (v.getId() == btnDelete.getId()) {
             this.showDeleteDialog();
-        } else        if (v.getId() == btnMessage.getId()) {
-            //Send user to main then to message fragment
-            this.getActivity().getIntent().putExtra("Asset", asset);
-            ((MainActivity) getActivity()).showMessageListFragment();
         } else     if (v.getId() == btnDelete.getId()) {
        //            ((MainActivity) getActivity()).showMessageListFragment();
         } else if (v.getId() == btnPurchase.getId()) {

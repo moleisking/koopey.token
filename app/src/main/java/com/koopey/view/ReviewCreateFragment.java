@@ -3,7 +3,6 @@ package com.koopey.view;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +19,7 @@ import com.koopey.model.AuthUser;
 import com.koopey.model.Asset;
 import com.koopey.model.Review;
 import com.koopey.model.User;
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 /**
  * Created by Scott on 03/02/2017.
  */

@@ -28,7 +28,7 @@
                 android:src="@drawable/default_user"
                 android:tag="my_user_image_1"></ImageView>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -44,9 +44,9 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -65,9 +65,9 @@
 
                     <requestFocus />
                 </EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -83,9 +83,9 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -99,9 +99,9 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -116,9 +116,9 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -133,7 +133,7 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
             <DatePicker
                 android:id="@+id/txtBirthday"
@@ -146,7 +146,7 @@
                 android:paddingTop="@dimen/label_vertical_margin"
                 android:startYear="1910"></DatePicker>
 
-            <android.support.design.widget.TextInputLayout
+            <TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -161,7 +161,7 @@
                     android:text=""
                     android:textColorHint="@color/place_autocomplete_search_hint"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </TextInputLayout>
 
             <fragment
                 android:id="@+id/place_autocomplete_fragment"
@@ -182,7 +182,7 @@
         android:layout_alignParentRight="true"
         android:orientation="horizontal">
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -191,9 +191,9 @@
         android:layout_marginBottom="@dimen/button_vertical_margin"
         android:layout_marginRight="@dimen/label_horizontal_margin"
         android:clickable="true"
-        android:src="@drawable/ic_vpn_key_black_24dp"></android.support.design.widget.FloatingActionButton>
+        android:src="@drawable/ic_vpn_key_black_24dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -202,6 +202,6 @@
         android:layout_marginBottom="@dimen/button_vertical_margin"
         android:layout_marginRight="@dimen/label_horizontal_margin"
         android:clickable="true"
-        android:src="@drawable/ic_add_black_24dp"></android.support.design.widget.FloatingActionButton>
+        android:src="@drawable/ic_add_black_24dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
     </LinearLayout>
 </RelativeLayout>

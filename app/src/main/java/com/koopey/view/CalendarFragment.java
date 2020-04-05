@@ -4,11 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 
@@ -94,9 +93,9 @@ public class CalendarFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View v) {
         try {
             if (v.getId() == btnMonthNext.getId()) {
-                this.vwCalendar.showNextMonth();
+                //this.vwCalendar.showNextMonth();
             } else if (v.getId() == btnMonthPrevious.getId()) {
-                this.vwCalendar.showPreviousMonth();
+               // this.vwCalendar.showPreviousMonth();
             }
         } catch (Exception ex) {
             Log.d(LOG_HEADER + ":ER", ex.getMessage());

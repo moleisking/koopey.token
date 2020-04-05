@@ -127,7 +127,7 @@
                     android:text="@string/label_month" />
             </RadioGroup>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -142,9 +142,9 @@
                     android:singleLine="true"
                     android:text="@integer/user_search_min"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -159,7 +159,7 @@
                     android:singleLine="true"
                     android:text="@integer/user_search_max"
                     android:textSize="@dimen/font_content_size"></EditText>
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Spinner
                 android:id="@+id/lstCurrency"
@@ -171,7 +171,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/button_vertical_margin"
         android:layout_marginRight="@dimen/label_horizontal_margin"
-        android:src="@drawable/ic_search_black_24dp"></android.support.design.widget.FloatingActionButton>
+        android:src="@drawable/ic_search_black_24dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 
 </RelativeLayout>

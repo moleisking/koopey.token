@@ -43,7 +43,7 @@
                 android:focusableInTouchMode="false"
                 android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -61,9 +61,9 @@
 
                         <requestFocus />
                     </EditText>
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -78,9 +78,9 @@
                         android:text=""
 
                         android:textSize="@dimen/font_content_size"></EditText>
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -94,9 +94,9 @@
                         android:singleLine="true"
                         android:text=""
                         android:textSize="@dimen/font_content_size"></EditText>
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -112,9 +112,9 @@
                         android:maxLines="1"
                         android:text=""
                         android:textSize="@dimen/font_content_size"></EditText>
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -130,7 +130,7 @@
                         android:maxLines="1"
                         android:text=""
                         android:textSize="@dimen/font_content_size"></EditText>
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <fragment
                     android:id="@+id/place_autocomplete_fragment"
@@ -144,7 +144,7 @@
     </ScrollView>
 
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -153,5 +153,5 @@
         android:layout_marginBottom="@dimen/button_vertical_margin"
         android:layout_marginRight="@dimen/label_horizontal_margin"
         android:clickable="true"
-        android:src="@drawable/ic_save_black_24dp"></android.support.design.widget.FloatingActionButton>
+        android:src="@drawable/ic_save_black_24dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 </RelativeLayout>
